@@ -1,0 +1,385 @@
+<!doctype html>
+<html class="no-js" lang="es">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="next" title="Módulo de análisis" href="analisis.html" /><link rel="prev" title="Datos de análisis" href="datos.html" />
+
+    <meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
+        <title>Proyecto - P5GX</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">P5GX</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">P5GX</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder=Búsqueda name="q" aria-label="Búsqueda">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contenido:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="instalacion.html">Creación del paquete</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentacion.html">Documentación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datos.html">Datos de análisis</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Proyecto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analisis.html">Módulo de análisis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simulacion.html">Módulo de simulación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="servicio.html">Módulo de servicio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dimensionamiento.html">Módulo de dimensionamiento</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section class="tex2jax_ignore mathjax_ignore" id="proyecto">
+<h1>Proyecto<a class="headerlink" href="#proyecto" title="Enlace permanente a este encabezado">#</a></h1>
+<p>Este es el enunciado del proyecto, como referencia.</p>
+<section id="p5-teoria-de-colas">
+<h2><code class="docutils literal notranslate"><span class="pre">P5</span></code> - <em>Teoría de colas</em><a class="headerlink" href="#p5-teoria-de-colas" title="Enlace permanente a este encabezado">#</a></h2>
+<blockquote>
+<div><p>Este es un ejercicio con los conceptos de las cadenas de Markov y los procesos de nacimiento y muerte, utilizando las herramientas de programación y cálculo numérico de Python. El proyecto tiene un paradigma de programación funcional y crea un paquete de Python por medio del trabajo colaborativo con Git, y además genera documentación automática del proyecto.</p>
+</div></blockquote>
+</section>
+<section id="procesos-de-nacimiento-y-muerte">
+<h2>Procesos de nacimiento y muerte<a class="headerlink" href="#procesos-de-nacimiento-y-muerte" title="Enlace permanente a este encabezado">#</a></h2>
+<p>Los procesos de nacimiento y muerte son un caso especial de las cadenas de Markov donde las transiciones solamente pueden ocurrir de un estado <span class="math notranslate nohighlight">\(i\)</span> a un estado <span class="math notranslate nohighlight">\(i + 1\)</span> («nacimiento» o llegada) o <span class="math notranslate nohighlight">\(i - 1\)</span> («muerte» o salida).</p>
+<ul class="simple">
+<li><p>Las llegadas están modeladas con un parámetro <span class="math notranslate nohighlight">\(\lambda\)</span> de una corriente de Poisson, parámetro también llamado «intensidad». <span class="math notranslate nohighlight">\(\lambda\)</span> tiene unidades «personas/minuto» o «solicitudes/segundo», etc. y refleja la distribución exponencial que describe el tiempo aleatorio de llegada entre un «cliente» y otro.</p></li>
+<li><p>Las salidas, o tiempo de servicio, están modeladas exponencialmente con un parámetro <span class="math notranslate nohighlight">\(\nu\)</span>. También <span class="math notranslate nohighlight">\(\nu\)</span> es el parámetro de una distribución exponencial que modela la duración del «servicio» para cada «cliente».</p></li>
+</ul>
+<p>Dos componentes dentro de estos sistemas son aleatorios:</p>
+<ul class="simple">
+<li><p>El <strong>tiempo</strong> que tarda «la máquina» (el sistema) en el estado <span class="math notranslate nohighlight">\(i\)</span>, que está modelado exponencialmente con un parámetro <span class="math notranslate nohighlight">\(\Omega_i\)</span>.</p></li>
+<li><p>La <strong>transición</strong> que hará de ese estado, que puede ser «hacia arriba» (<span class="math notranslate nohighlight">\(i+1\)</span>) con probabilidad <span class="math notranslate nohighlight">\(p_i\)</span> o «hacia abajo» (<span class="math notranslate nohighlight">\(i-1\)</span>) con probabilidad <span class="math notranslate nohighlight">\(q_i\)</span>.</p></li>
+</ul>
+<p>Es necesario encontrar la expresión para <span class="math notranslate nohighlight">\(\Omega_i\)</span>, <span class="math notranslate nohighlight">\(p_i\)</span> y <span class="math notranslate nohighlight">\(q_i\)</span> en términos de <span class="math notranslate nohighlight">\(\lambda\)</span> y <span class="math notranslate nohighlight">\(\nu\)</span> para conocer la dinámica del sistema.</p>
+</section>
+<section id="problema">
+<h2>Problema<a class="headerlink" href="#problema" title="Enlace permanente a este encabezado">#</a></h2>
+<p>Es necesario dimensionar la capacidad de un sistema con base en la previsión de solicitudes recibidas («clientes») por segundo y bajo ciertos parámetros de calidad del servicio.</p>
+<p>El archivo adjunto <code class="docutils literal notranslate"><span class="pre">clientes.csv</span></code> especifica el tiempo de llegada (en segundos desde el inicio de la simulación) de los primeros <span class="math notranslate nohighlight">\(N\)</span> clientes de un sistema, el intervalo de tiempo (segundos) entre el cliente y el anterior y la duración del servicio (segundos) prestado a cada uno. Nótese que no está especificado el tiempo en que son atendidos, únicamente el tiempo de la llegada, ya que el momento de la atención es variable: puede suceder antes o después, dependiendo de la fila en el sistema.</p>
+<p>Este archivo será utilizado para obtener los parámetros iniciales.</p>
+<section id="objetivos">
+<h3>Objetivos<a class="headerlink" href="#objetivos" title="Enlace permanente a este encabezado">#</a></h3>
+<blockquote>
+<div><p>Sea un proceso modelado como un sistema M/M/1, donde la entrada de clientes es una corriente de Poisson con parámetro <span class="math notranslate nohighlight">\(\lambda\)</span> y el nodo de servicio está modelado con un parámetro <span class="math notranslate nohighlight">\(\nu\)</span>.</p>
+</div></blockquote>
+<p>En primer lugar, es necesario realizar un estudio de la intensidad de las solicitudes al sistema, para encontrar el parámetro <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+<p>En segundo lugar, es necesario realizar un estudio del tiempo de servicio a cada solicitud, para encontrar el parámetro <span class="math notranslate nohighlight">\(\nu\)</span>.</p>
+<p>Seguidamente, es posible realizar una simulación, el análisis del servicio provisto y el diseño del sistema para satisfacer ciertos parámetros de servicio.</p>
+</section>
+<section id="asignaciones">
+<h3>Asignaciones<a class="headerlink" href="#asignaciones" title="Enlace permanente a este encabezado">#</a></h3>
+<ul class="simple">
+<li><p>Módulo <code class="docutils literal notranslate"><span class="pre">analisis</span></code>: Este módulo determina los parámetros de los datos un sistema M/M/s.</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>(10 %) Implementar una función <code class="docutils literal notranslate"><span class="pre">llegada()</span></code> capaz de encontrar el parámetro <span class="math notranslate nohighlight">\(\lambda\)</span> de la intensidad de llegadas al sistema, modelado como una corriente de Poisson.</p></li>
+<li><p>(10 %) Implementar una función <code class="docutils literal notranslate"><span class="pre">servicio()</span></code> capaz de encontrar el parámetro <span class="math notranslate nohighlight">\(\nu\)</span> del tiempo de servicio del sistema.</p></li>
+<li><p>(10 %) Implementar una función <code class="docutils literal notranslate"><span class="pre">parametros()</span></code> capaz de encontrar los parámetros <span class="math notranslate nohighlight">\(\Omega_i\)</span>, <span class="math notranslate nohighlight">\(p_i\)</span> y <span class="math notranslate nohighlight">\(q_i\)</span> del sistema para cada estado.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Módulo <code class="docutils literal notranslate"><span class="pre">simulacion</span></code>: Este módulo simula y visualiza un sistema M/M/s con parámetros dados.</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>(10 %) Implementar una función <code class="docutils literal notranslate"><span class="pre">sistema()</span></code> capaz de simular una secuencia de llegadas y salidas de clientes al sistema, según los parámetros encontrados.</p></li>
+<li><p>(10 %) Implementar una función <code class="docutils literal notranslate"><span class="pre">visualizacion()</span></code> capaz de crear una gráfica para observar un ejemplo del comportamiento del sistema con los parámetros encontrados <span class="math notranslate nohighlight">\(\lambda\)</span> y <span class="math notranslate nohighlight">\(\nu\)</span>.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Módulo <code class="docutils literal notranslate"><span class="pre">servicio</span></code>: Este módulo analiza la probabilidad de estado estable de cada estado -es decir, el número de personas en el sistema- y determina el porcentaje del tiempo que la fila del sistema está por encima de cierto valor.</p></li>
+</ul>
+<ol class="arabic simple" start="6">
+<li><p>(10 %) Implementar una función <code class="docutils literal notranslate"><span class="pre">probabilidad()</span></code> capaz de determinar el vector de estado estable para cada estado.</p></li>
+<li><p>(10 %) Implementar una función <code class="docutils literal notranslate"><span class="pre">fila()</span></code> capaz de determinar el porcentaje de clientes que hacen una fila de <span class="math notranslate nohighlight">\(N\)</span> espacios para recibir el servicio.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Módulo <code class="docutils literal notranslate"><span class="pre">dimensionamiento</span></code>: Este módulo permite tanto el diseño del número de servidores como el tiempo de servicio necesarios para satisfacer ciertos criterios de servicio.</p></li>
+</ul>
+<ol class="arabic simple" start="8">
+<li><p>(10 %) Implementar una función <code class="docutils literal notranslate"><span class="pre">servidores()</span></code> capaz de encontrar el número de servidores necesarios para satisfacer un parámetro de calidad del servicio dado.</p></li>
+<li><p>(10 %) Implementar una función <code class="docutils literal notranslate"><span class="pre">tiempo()</span></code> capaz de encontrar el tiempo promedio del servicio necesario para satisfacer un parámetro dado de calidad del servicio.</p></li>
+</ol>
+</section>
+</section>
+<section id="programacion-del-proyecto">
+<h2>Programación del proyecto<a class="headerlink" href="#programacion-del-proyecto" title="Enlace permanente a este encabezado">#</a></h2>
+<p>Este es un proyecto de programación funcional (basado en funciones), de la misma forma que los proyectos 3 y 4. El propósito es también crear un paquete de Python que será llamado <code class="docutils literal notranslate"><span class="pre">cadena</span></code>, y será desarrollado de forma colaborativa con Git y GitHub. Este paquete tiene varios módulos, cuyas funciones están descritas en los módulos: <code class="docutils literal notranslate"><span class="pre">analisis</span></code>, <code class="docutils literal notranslate"><span class="pre">simulacion</span></code>, <code class="docutils literal notranslate"><span class="pre">servicio</span></code> y <code class="docutils literal notranslate"><span class="pre">dimensionamiento</span></code>.</p>
+<p>Cada grupo tiene un repositorio con la siguiente estructura de directorios y archivos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>P5GX/
+├─ setup.py
+├─ clientes.csv
+├─ cadena/
+│  ├─ __init__.py
+│  ├─ analisis.py
+│  ├─ simulacion.py
+│  ├─ servicio.py
+│  ├─ dimensionamiento.py
+├─ README.md
+├─ docs/
+├─ revision.py
+├─ P5.ipynb
+├─ .gitignore
+</pre></div>
+</div>
+<blockquote>
+<div><p>La revisión del proyecto se hará con el código de <code class="docutils literal notranslate"><span class="pre">revision.py</span></code>, que utiliza todas las funciones solicitadas.</p>
+</div></blockquote>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="analisis.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Módulo de análisis</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="datos.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Datos de análisis</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, MPSS
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Proyecto</a><ul>
+<li><a class="reference internal" href="#p5-teoria-de-colas"><code class="docutils literal notranslate"><span class="pre">P5</span></code> - <em>Teoría de colas</em></a></li>
+<li><a class="reference internal" href="#procesos-de-nacimiento-y-muerte">Procesos de nacimiento y muerte</a></li>
+<li><a class="reference internal" href="#problema">Problema</a><ul>
+<li><a class="reference internal" href="#objetivos">Objetivos</a></li>
+<li><a class="reference internal" href="#asignaciones">Asignaciones</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#programacion-del-proyecto">Programación del proyecto</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    <script src="_static/translations.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>
