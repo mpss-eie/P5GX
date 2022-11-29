@@ -40,26 +40,35 @@ Seguidamente, es posible realizar una simulación, el análisis del servicio pro
 
 ### Asignaciones
 
-- Módulo `analisis`: Este módulo determina los parámetros de los datos un sistema M/M/s.
+- Módulo `analisis`: Este módulo determina los parámetros de los datos un sistema M/M/1.
 
 1. (10 %) Implementar una función `llegada()` capaz de encontrar el parámetro $\lambda$ de la intensidad de llegadas al sistema, modelado como una corriente de Poisson. 
 2. (10 %) Implementar una función `servicio()` capaz de encontrar el parámetro $\nu$ del tiempo de servicio del sistema.
 3. (10 %) Implementar una función `parametros()` capaz de encontrar los parámetros $\Omega_i$, $p_i$ y $q_i$ del sistema para cada estado.
 
-- Módulo `simulacion`: Este módulo simula y visualiza un sistema M/M/s con parámetros dados.
+- Módulo `simulacion`: Este módulo simula y visualiza un sistema M/M/1 con parámetros dados.
 
 4. (10 %) Implementar una función `sistema()` capaz de simular una secuencia de llegadas y salidas de clientes al sistema, según los parámetros encontrados. 
 5. (10 %) Implementar una función `visualizacion()` capaz de crear una gráfica para observar un ejemplo del comportamiento del sistema con los parámetros encontrados $\lambda$ y $\nu$. 
 
-- Módulo `servicio`: Este módulo analiza la probabilidad de estado estable de cada estado -es decir, el número de personas en el sistema- y determina el porcentaje del tiempo que la fila del sistema está por encima de cierto valor.
+- Módulo `servicio`: Este módulo analiza la probabilidad de estado estable de cada estado -es decir, el número de personas en el sistema- y determina el porcentaje del tiempo que la fila del sistema está por encima de cierto valor en un sistema M/M/1.
 
 6. (10 %) Implementar una función `probabilidad()` capaz de determinar el vector de estado estable para cada estado.
-7. (10 %) Implementar una función `fila()` capaz de determinar el porcentaje de clientes que hacen una fila de $N$ espacios para recibir el servicio.
+7. (10 %) Implementar una función `fila()` capaz de determinar el porcentaje de clientes que hacen una fila de $L_q$ espacios antes de recibir el servicio.
 
-- Módulo `dimensionamiento`: Este módulo permite tanto el diseño del número de servidores como el tiempo de servicio necesarios para satisfacer ciertos criterios de servicio.
+- Módulo `dimensionamiento`: Este módulo permite el diseño del número de servidores $s$ en un sistema M/M/s y también el parámetro de servicio $\nu$ necesario para satisfacer cierto criterio de servicio.
 
-8. (10 %) Implementar una función `servidores()` capaz de encontrar el número de servidores necesarios para satisfacer un parámetro de calidad del servicio dado. 
+8. (10 %) Implementar una función `servidores()` capaz de encontrar el número de servidores necesarios para satisfacer un parámetro dado de calidad del servicio. 
 9. (10 %) Implementar una función `tiempo()` capaz de encontrar el tiempo promedio del servicio necesario para satisfacer un parámetro dado de calidad del servicio.
+
+**Nota**: El criterio de "calidad del servicio" utilizado aquí es el siguiente: dado un porcentaje del tiempo, $P$, si el sistema tiene más de una cantidad $L_q$ de clientes en fila por una fracción de tiempo menor a $P$ entonces no satisface el criterio. Por ejemplo, es deseado que no exista una fila de más de 5 clientes el 95% del tiempo. Si se analiza el sistema por un periodo de tiempo de 10 minutos y durante un minuto la fila fue de 6 clientes o más, entonces no fue satisfecho el criterio, puesto que solamente el 90% del tiempo fue cumplida la condición, y se requería el 95%.
+
+Ambas funciones deben recibir parámetros $L_q$ y $P$ arbitrarios para encontrar el número de servidores $s$ en `servidores()` y $\nu$ en `tiempo()` de forma que satisfaga la condición, si es posible.
+
+- Documentación
+
+10. (10 %) Todas las funciones deben estar documentadas con una página web generada por Sphinx.
+
 
 ## Programación del proyecto
 
